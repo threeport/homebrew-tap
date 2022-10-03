@@ -11,7 +11,7 @@ class Threepctl < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/threeport/threepctl/releases/download/v1.0.2/threepctl_v1.0.2_macOS_arm64.tar.gz"
-      sha256 "82278185e337e2428d0fadbab09db64db2225543ae6f393cd40b950160599a84"
+      sha256 "2be8b55b37a62f46ea5eba6219c8fe265c557c0b0f7152e03939c69b5d1bcc4e"
 
       def install
         bin.install "threepctl"
@@ -19,7 +19,7 @@ class Threepctl < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/threeport/threepctl/releases/download/v1.0.2/threepctl_v1.0.2_macOS_x86_64.tar.gz"
-      sha256 "3e6059d2882a150f03545ec6992cd0fd8ea52f1f9d15464ca8a1ba85f868fab4"
+      sha256 "6294d31eb01730908ce69f93372921eb1200d794b194f0c27933d09a1b29946a"
 
       def install
         bin.install "threepctl"
@@ -30,7 +30,7 @@ class Threepctl < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/threeport/threepctl/releases/download/v1.0.2/threepctl_v1.0.2_Linux_x86_64.tar.gz"
-      sha256 "d57f8c6315a7201599a44c0fca0fcb897eaab2c8f75d4dfd09937d30ec4e91cb"
+      sha256 "e11095d26104296641218c982b58aa59fd228a4803ea7cda4cdb68abc56e154e"
 
       def install
         bin.install "threepctl"
@@ -38,7 +38,7 @@ class Threepctl < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/threeport/threepctl/releases/download/v1.0.2/threepctl_v1.0.2_Linux_arm.tar.gz"
-      sha256 "f77fe859f2bb4405b200380007b12dd185fe5d983e3438a0fb5ae4156aa53fae"
+      sha256 "4f859f4daab57ac94dc1bb2c013bbae76c973d2c4f1128d8965e4a3d9e358b82"
 
       def install
         bin.install "threepctl"
@@ -46,7 +46,7 @@ class Threepctl < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/threeport/threepctl/releases/download/v1.0.2/threepctl_v1.0.2_Linux_arm64.tar.gz"
-      sha256 "c7b0cbd6aa14e9d85b8749f6ede63a49cd9785a0c7a42d3a49111dd6ac789695"
+      sha256 "ac8a8b72eb20c8a3ae3729ba9b5c51cd1faf905a83374e51cc3be03f462bfb55"
 
       def install
         bin.install "threepctl"
