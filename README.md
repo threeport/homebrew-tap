@@ -4,8 +4,16 @@ Threeport Homebrew formulae, casks and/or external commands
 
 ## How do I install these formulae?
 
-```shell
+```bash
+brew tap threeport/tap
 brew install threeport/tap/<formula>
+```
+
+For example:
+
+```bash
+brew tap threeport/tap
+brew install threeport/tap/threepctl
 ```
 
 
