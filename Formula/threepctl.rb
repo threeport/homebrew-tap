@@ -5,21 +5,21 @@
 class Threepctl < Formula
   desc "A CLI for managing the Threeport platform."
   homepage "https://github.com/threeport/threepctl"
-  version "1.0.4"
+  version "1.0.5"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.4/threepctl_v1.0.4_macOS_arm64.tar.gz"
-      sha256 "34c40e2d3f6924d566261b9108070bb6836e40e078ba7680a3583c27941ecdac"
+    if Hardware::CPU.intel?
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.5/threepctl_v1.0.5_macOS_x86_64.tar.gz"
+      sha256 "865052ad52f80c60d4bf1f2cf8598521927a2741107b9ba69fbdfe1db9800f66"
 
       def install
         bin.install "threepctl"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.4/threepctl_v1.0.4_macOS_x86_64.tar.gz"
-      sha256 "ca7d851a5b3db30e13cfb1612e015dce4f83596c518785babf1040d92d8fa127"
+    if Hardware::CPU.arm?
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.5/threepctl_v1.0.5_macOS_arm64.tar.gz"
+      sha256 "4b1835d3b53c7d62360f5d06040e471b262935189ca1cebd23cd93c4f81c408a"
 
       def install
         bin.install "threepctl"
@@ -29,24 +29,24 @@ class Threepctl < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.4/threepctl_v1.0.4_Linux_x86_64.tar.gz"
-      sha256 "c175d25212f46ca1b7e5fcea2cd7677d725372e7536ace373a569ab9da3dd74d"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.5/threepctl_v1.0.5_Linux_x86_64.tar.gz"
+      sha256 "aef4c9fc531ce62d00a84440e0c8dfc21140efe57b7a1e0cd0f7ad73137d30a3"
 
       def install
         bin.install "threepctl"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.4/threepctl_v1.0.4_Linux_arm.tar.gz"
-      sha256 "8b78921996a1517ff4ff05a93895fc04fc68707eaac06b001ae0cc60eddf8795"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.5/threepctl_v1.0.5_Linux_arm.tar.gz"
+      sha256 "6b42c08464bb36813d871d02aa955acd54aa80fe9265a377e6d50d42576bbdb2"
 
       def install
         bin.install "threepctl"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.4/threepctl_v1.0.4_Linux_arm64.tar.gz"
-      sha256 "8c10aca1db37274c65542c008cc56b7d98d803ef5675bbe6ce951ab1cb22508b"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.5/threepctl_v1.0.5_Linux_arm64.tar.gz"
+      sha256 "9833d7c80b700f15253c3cd03ebcb9bba3ed2062479afe4c0ef501e0174a25f2"
 
       def install
         bin.install "threepctl"
