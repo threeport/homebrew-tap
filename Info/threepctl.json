@@ -9,16 +9,16 @@
   "license": "MIT",
   "homepage": "https://github.com/threeport/threepctl",
   "versions": {
-    "stable": "1.0.6",
+    "stable": "1.0.7",
     "head": null,
     "bottle": false
   },
   "urls": {
     "stable": {
-      "url": "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_macOS_x86_64.tar.gz",
+      "url": "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Darwin_x86_64.tar.gz",
       "tag": null,
       "revision": null,
-      "checksum": "e49ace5a63f8e73e9c2b6b9e3cb4225b5cac69d518b2ed7a3a69bdda30bb06e8"
+      "checksum": "2034f66c7a25afe2e5d5d2fa013617daa2cde685fd021fa43db6cc4dcc6203d9"
     }
   },
   "revision": 0,
@@ -28,7 +28,10 @@
   "keg_only_reason": null,
   "options": [],
   "build_dependencies": [],
-  "dependencies": [],
+  "dependencies": [
+    "wget",
+    "jq"
+  ],
   "test_dependencies": [],
   "recommended_dependencies": [],
   "optional_dependencies": [],
