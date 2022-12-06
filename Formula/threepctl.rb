@@ -5,51 +5,69 @@
 class Threepctl < Formula
   desc "A CLI for managing the Threeport platform."
   homepage "https://github.com/threeport/threepctl"
-  version "1.0.6"
+  version "1.0.7"
   license "MIT"
 
+  depends_on "wget"
+  depends_on "jq"
+
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_macOS_x86_64.tar.gz"
-      sha256 "e49ace5a63f8e73e9c2b6b9e3cb4225b5cac69d518b2ed7a3a69bdda30bb06e8"
+    if Hardware::CPU.arm?
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Darwin_arm64.tar.gz"
+      sha256 "033e63a2e0368a25a5d9297ceb5b4f8b9aad31171c0ebe3ae3abed78976f254c"
 
       def install
         bin.install "threepctl"
+        bash_completion.install "completions/threepctl.bash" => "threepctl"
+        zsh_completion.install "completions/threepctl.zsh" => "_threepctl"
+        fish_completion.install "completions/threepctl.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_macOS_arm64.tar.gz"
-      sha256 "784e6c38c0813b251101cf566398900bf5ae052fe051996440065c7800d74bc4"
+    if Hardware::CPU.intel?
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Darwin_x86_64.tar.gz"
+      sha256 "2034f66c7a25afe2e5d5d2fa013617daa2cde685fd021fa43db6cc4dcc6203d9"
 
       def install
         bin.install "threepctl"
+        bash_completion.install "completions/threepctl.bash" => "threepctl"
+        zsh_completion.install "completions/threepctl.zsh" => "_threepctl"
+        fish_completion.install "completions/threepctl.fish"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_Linux_x86_64.tar.gz"
-      sha256 "868573d25829f9d0aaa3d22f9d29a3406119e4b9f9bf7d8ddc0a96a3401b97ef"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Linux_x86_64.tar.gz"
+      sha256 "066464490c3bf165f854d3d04fa1b486298b5dcad90d8407876e093429559606"
 
       def install
         bin.install "threepctl"
+        bash_completion.install "completions/threepctl.bash" => "threepctl"
+        zsh_completion.install "completions/threepctl.zsh" => "_threepctl"
+        fish_completion.install "completions/threepctl.fish"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_Linux_arm.tar.gz"
-      sha256 "d74b3b1db5f8c362ed77d1f76ccd5c4b9bde997b701b1575adc341b1ec86c089"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Linux_arm.tar.gz"
+      sha256 "d3765265bf1ae95944dc59ee9b2fb0ba8359404b2b1d5721be7c9b1b56269be5"
 
       def install
         bin.install "threepctl"
+        bash_completion.install "completions/threepctl.bash" => "threepctl"
+        zsh_completion.install "completions/threepctl.zsh" => "_threepctl"
+        fish_completion.install "completions/threepctl.fish"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/threepctl/releases/download/v1.0.6/threepctl_v1.0.6_Linux_arm64.tar.gz"
-      sha256 "f6ce07988fbb1434f7044c345ea8c407259b69225873c1c7049612d11c870d01"
+      url "https://github.com/threeport/threepctl/releases/download/v1.0.7/threepctl_v1.0.7_Linux_arm64.tar.gz"
+      sha256 "be7e2b49445d4e1e74f7d37fa1e82d8f490c576312190bc133cc2f3789e53a24"
 
       def install
         bin.install "threepctl"
+        bash_completion.install "completions/threepctl.bash" => "threepctl"
+        zsh_completion.install "completions/threepctl.zsh" => "_threepctl"
+        fish_completion.install "completions/threepctl.fish"
       end
     end
   end
