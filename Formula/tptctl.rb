@@ -5,7 +5,7 @@
 class Tptctl < Formula
   desc "A CLI for managing workloads on Threeport."
   homepage "https://github.com/threeport/tptctl"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   depends_on "docker"
@@ -15,9 +15,9 @@ class Tptctl < Formula
   depends_on "jq"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Darwin_arm64.tar.gz"
-      sha256 "69d7973f52894d63b9406cd33d6c413bba285645f2d9112c39369c9c0a00540a"
+    if Hardware::CPU.intel?
+      url "https://github.com/threeport/tptctl/releases/download/v0.0.4/tptctl_v0.0.4_Darwin_x86_64.tar.gz"
+      sha256 "e190b1cadd4b05aec5e5f74a67aef9034386e7bcfa8533f5fb889fc11840f988"
 
       def install
         bin.install "tptctl"
@@ -26,9 +26,9 @@ class Tptctl < Formula
         fish_completion.install "completions/tptctl.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Darwin_x86_64.tar.gz"
-      sha256 "e74a2aa28a1cc39cbf494ecd33ba6b599dd94130441d25ac6ab5770d59359041"
+    if Hardware::CPU.arm?
+      url "https://github.com/threeport/tptctl/releases/download/v0.0.4/tptctl_v0.0.4_Darwin_arm64.tar.gz"
+      sha256 "3cd6ea9815721c748b3c135372297842ae0c084db8f1e1ddbb7d1003b966df27"
 
       def install
         bin.install "tptctl"
@@ -40,20 +40,9 @@ class Tptctl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Linux_x86_64.tar.gz"
-      sha256 "2ab84b11fa16a20d9513d0933471190886a7c18188e4357ad92f5e5ede7408e4"
-
-      def install
-        bin.install "tptctl"
-        bash_completion.install "completions/tptctl.bash" => "tptctl"
-        zsh_completion.install "completions/tptctl.zsh" => "_tptctl"
-        fish_completion.install "completions/tptctl.fish"
-      end
-    end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Linux_arm.tar.gz"
-      sha256 "7d5f8a67e71ce7d6607973bb4c496f3f8ffadb5f8e211169e562892391362eda"
+      url "https://github.com/threeport/tptctl/releases/download/v0.0.4/tptctl_v0.0.4_Linux_arm.tar.gz"
+      sha256 "569249c26be94c1f303a6701a64bae9d55a8148b3efec4fb332166e75ba8cc9d"
 
       def install
         bin.install "tptctl"
@@ -63,8 +52,19 @@ class Tptctl < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Linux_arm64.tar.gz"
-      sha256 "67830f948527487fd502d299f9d0b4e62de0a4b203c29a90818c7592053b0c0e"
+      url "https://github.com/threeport/tptctl/releases/download/v0.0.4/tptctl_v0.0.4_Linux_arm64.tar.gz"
+      sha256 "429c9ca75c1a55a488e355f5d7d2d515dddc6a87a792c08f1c0dda84fd16f158"
+
+      def install
+        bin.install "tptctl"
+        bash_completion.install "completions/tptctl.bash" => "tptctl"
+        zsh_completion.install "completions/tptctl.zsh" => "_tptctl"
+        fish_completion.install "completions/tptctl.fish"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/threeport/tptctl/releases/download/v0.0.4/tptctl_v0.0.4_Linux_x86_64.tar.gz"
+      sha256 "4981a4bd4584746ac892936dff84c9b495f6559f6b52930a495b375e4d52d2b1"
 
       def install
         bin.install "tptctl"
