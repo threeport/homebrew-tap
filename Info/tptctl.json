@@ -1,0 +1,55 @@
+{
+  "name": "tptctl",
+  "full_name": "tptctl",
+  "tap": null,
+  "oldname": null,
+  "aliases": [],
+  "versioned_formulae": [],
+  "desc": "A CLI for managing workloads on Threeport.",
+  "license": "MIT",
+  "homepage": "https://github.com/threeport/tptctl",
+  "versions": {
+    "stable": "0.0.3",
+    "head": null,
+    "bottle": false
+  },
+  "urls": {
+    "stable": {
+      "url": "https://github.com/threeport/tptctl/releases/download/v0.0.3/tptctl_v0.0.3_Darwin_x86_64.tar.gz",
+      "tag": null,
+      "revision": null,
+      "checksum": "e74a2aa28a1cc39cbf494ecd33ba6b599dd94130441d25ac6ab5770d59359041"
+    }
+  },
+  "revision": 0,
+  "version_scheme": 0,
+  "bottle": {},
+  "keg_only": false,
+  "keg_only_reason": null,
+  "options": [],
+  "build_dependencies": [],
+  "dependencies": [
+    "docker",
+    "kubectl",
+    "kind",
+    "wget",
+    "jq"
+  ],
+  "test_dependencies": [],
+  "recommended_dependencies": [],
+  "optional_dependencies": [],
+  "uses_from_macos": [],
+  "requirements": [],
+  "conflicts_with": [],
+  "caveats": null,
+  "installed": [],
+  "linked_keg": null,
+  "pinned": false,
+  "outdated": false,
+  "deprecated": false,
+  "deprecation_date": null,
+  "deprecation_reason": null,
+  "disabled": false,
+  "disable_date": null,
+  "disable_reason": null
+}
